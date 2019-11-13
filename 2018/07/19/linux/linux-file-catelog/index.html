@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Linux软件安装目录 | 上五楼的快活</title><meta name="description" content="Linux软件安装目录"><meta name="keywords" content="Linux"><meta name="author" content="Liu Ning,realliuning1995@gmail.com"><meta name="copyright" content="Liu Ning"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://lnlynn.github.io/2018/07/19/linux/linux-file-catelog/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Linux软件安装目录"><meta name="twitter:description" content="Linux软件安装目录"><meta name="twitter:image" content="http://lnlynn.github.io/images/header_img/header-5.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Linux软件安装目录"><meta property="og:url" content="http://lnlynn.github.io/2018/07/19/linux/linux-file-catelog/"><meta property="og:site_name" content="上五楼的快活"><meta property="og:description" content="Linux软件安装目录"><meta property="og:image" content="http://lnlynn.github.io/images/header_img/header-5.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="Linux修改文件权限" href="http://lnlynn.github.io/2018/07/22/linux/linux-change-file-permission/"><link rel="next" title="Ubutnu解决zip中文乱码问题" href="http://lnlynn.github.io/2018/07/19/linux/ubuntu-zip-chinese-error-code/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight_copy: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><div id="content-outer"><div id="top-container" style="background-image: url(/images/header_img/header-5.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">上五楼的快活</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="/images/ironman-draw.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description"></div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-file-photo-o"></i><span> 相册</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-bars"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Linux软件安装目录</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-19</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Linux/">Linux</a></span></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>安装位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用户自己的软件</td>
+<td>/usr/local</td>
+</tr>
+<tr>
+<td>普通执行程序文件</td>
+<td>/usr/bin</td>
+</tr>
+<tr>
+<td>服务器执行程序文件和管理程序文件</td>
+<td>/usr/sbin</td>
+</tr>
+<tr>
+<td>应用程序配置文件</td>
+<td>/etc</td>
+</tr>
+<tr>
+<td>日志文件</td>
+<td>/var/log</td>
+</tr>
+<tr>
+<td>应用程序文档文件</td>
+<td>/usr/share/doc</td>
+</tr>
+<tr>
+<td>应用程序手册页文件</td>
+<td>/usr/share/man</td>
+</tr>
+</tbody>
+</table>
+<p>Linux 的软件安装目录是也是有讲究的，理解这一点，在对系统管理是有益的</p>
+<p><code>/usr</code>：系统级的目录，可以理解为<code>C:/Windows/</code>，<code>/usr/lib</code>理解为<code>C:/Windows/System32</code>。<br>
+<code>/usr/local</code>：用户级的程序目录，可以理解为<code>C:/Progrem Files/</code>。用户自己编译的软件默认会安装到这个目录下。<br>
+<code>/opt</code>：用户级的程序目录，可以理解为<code>D:/Software</code>，opt有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你不需要时，直接<code>rm -rf</code>掉即可。在硬盘容量不够时，也可将/opt单独挂载到其他磁盘上使用。</p>
+<h4><span id="源码放哪里">源码放哪里？</span></h4>
+<p><code>/usr/src</code>：系统级的源码目录。<br>
+<code>/usr/local/src</code>：用户级的源码目录</p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux    </a></div><div class="post_share"><div class="social-share" data-image="/images/header_img/header-5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2018/07/22/linux/linux-change-file-permission/"><img class="prev_cover lozad" data-src="/images/header_img/header-6.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>Linux修改文件权限</span></div></a></div><div class="next-post pull-right"><a href="/2018/07/19/linux/ubuntu-zip-chinese-error-code/"><img class="next_cover lozad" data-src="/images/header_img/header-3.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>Ubutnu解决zip中文乱码问题</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span>Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2018/07/22/linux/linux-change-file-permission/" title="Linux修改文件权限"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-6.jpg"><div class="relatedPosts_title">Linux修改文件权限</div></a></div><div class="relatedPosts_item"><a href="/2018/08/12/linux/debian-system-config/" title="Debian系统配置使用心得"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-7.jpg"><div class="relatedPosts_title">Debian系统配置使用心得</div></a></div><div class="relatedPosts_item"><a href="/2018/07/19/linux/ubuntu-zip-chinese-error-code/" title="Ubutnu解决zip中文乱码问题"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-3.jpg"><div class="relatedPosts_title">Ubutnu解决zip中文乱码问题</div></a></div><div class="relatedPosts_item"><a href="/2018/07/29/linux/ubuntu-install-mysql/" title="Ubuntu安装MySql"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-4.jpg"><div class="relatedPosts_title">Ubuntu安装MySql</div></a></div><div class="relatedPosts_item"><a href="/2019/06/02/linux/tomcat-deploy-command/" title="Tomcat部署常用命令"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-6.jpg"><div class="relatedPosts_title">Tomcat部署常用命令</div></a></div><div class="relatedPosts_item"><a href="/2018/07/15/linux/ubuntu18.04-install-jdk/" title="Ubuntu18.04安装jdk"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-2.jpg"><div class="relatedPosts_title">Ubuntu18.04安装jdk</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By Liu Ning</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script></body></html>

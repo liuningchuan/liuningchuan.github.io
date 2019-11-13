@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>git使用简单总结 | 上五楼的快活</title><meta name="description" content="git使用简单总结"><meta name="keywords" content="Git"><meta name="author" content="Liu Ning,realliuning1995@gmail.com"><meta name="copyright" content="Liu Ning"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://lnlynn.github.io/2018/08/18/tools/git/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="git使用简单总结"><meta name="twitter:description" content="git使用简单总结"><meta name="twitter:image" content="http://lnlynn.github.io/images/header_img/header-3.jpg"><meta property="og:type" content="article"><meta property="og:title" content="git使用简单总结"><meta property="og:url" content="http://lnlynn.github.io/2018/08/18/tools/git/"><meta property="og:site_name" content="上五楼的快活"><meta property="og:description" content="git使用简单总结"><meta property="og:image" content="http://lnlynn.github.io/images/header_img/header-3.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="跨域问题" href="http://lnlynn.github.io/2018/09/05/front/cors/"><link rel="next" title="Ajxa已死，fetch永生" href="http://lnlynn.github.io/2018/08/13/reprint/ajax-and-fetch/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight_copy: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><div id="content-outer"><div id="top-container" style="background-image: url(/images/header_img/header-3.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">上五楼的快活</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="/images/ironman-draw.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description"></div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-file-photo-o"></i><span> 相册</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-bars"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">git使用简单总结</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-08-18</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/工具/">工具</a></span></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h3><span id="新建分支">新建分支</span></h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
+<p>例如新建dev分支并将其推送到远程仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br><span class="line">git checkout dev</span><br><span class="line">git push --set-upstream origin dev</span><br></pre></td></tr></table></figure>
+<p>其中<code>git checkout dev</code>命令从master、分支切换到dev分支.</p>
+<p>如果出现下面的错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: No destination configured to pus to.</span><br></pre></td></tr></table></figure>
+<p>说明缺少推送的目标地址，解决方法有两种</p>
+<ul>
+<li>添加目标地址参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push git@github.com:xxx/xxx.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置默认参数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:xxx/xxx.git</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看当前所有分支信息</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -av</span><br></pre></td></tr></table></figure>
+<h3><span id="用户名和邮箱地址">用户名和邮箱地址</span></h3>
+<ul>
+<li>查看</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "username"</span><br><span class="line">git config --global user.email "email"</span><br></pre></td></tr></table></figure>
+<h3><span id="配置ssh-key">配置ssh key</span></h3>
+<ol>
+<li>打开终端，输入</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 'xxxx@xxx.com'</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>根据提示输入密码，一路回车，会在用户文件夹的.ssh下生成三个文件：<strong>id_rsa</strong> <strong>id_rsa.pub</strong> <strong>knowm_hosts</strong></li>
+<li>进入Github个人主页–settings–点击<strong>SSH and GPG keys</strong></li>
+<li>打开id_rsa.pub，将其中的内容复制到github的ssh key 输入框里面</li>
+<li>之后就可以正常的用git来同步开发项目了。</li>
+</ol>
+<p>创建完仓库之后，将本地项目和该仓库关联的步骤：</p>
+<p>①先cd到本地项目的文件夹，执行：git init</p>
+<p>②添加自述文件：git add <a href="http://README.md" target="_blank" rel="noopener">README.md</a></p>
+<p>add所有的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add -u</span></span><br></pre></td></tr></table></figure>
+<p>③将代码提交到本地仓库先 ：git commit -m “first commit” //“”是注释，任意写</p>
+<p>④ 将本地项目和远程仓库关联：       git remote add origin <a href="https://github.com/xxx" target="_blank" rel="noopener">https://github.com/xxx</a>(一般是你的邮箱名）/xxx（仓库名称）.git</p>
+<p>将本地项目和远程项目进行合并</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git pull --rebase origin master</span></span><br></pre></td></tr></table></figure>
+<p>⑤将本地代码push到远程仓库：  git push -u origin master</p>
+<p>把远程仓库的代码合并到本地仓库，但不会提交本地的代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span></span><br></pre></td></tr></table></figure>
+<p>因为已经和远程仓库关联，因此用origin代替远程主机名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git pull origin Branch.v0.1.1828_dev:Branch.v0.1.1828_dev</span></span><br></pre></td></tr></table></figure>
+<p>push的时候如果暴力一点可以直接</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br></pre></td></tr></table></figure>
+<h3><span id="清除本地分支">清除本地分支</span></h3>
+<p>Git如果在远程仓库上删除了某一分支，并不会删除本地的远程追踪分支。这时候，可以使用如下命令查看那些分支需要清理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote prune origin --dry-run</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Pruning origin</span><br><span class="line">URL: git@10.2.10.22:xxx/xxx.git</span><br><span class="line"> * [would prune] origin/Branch.v1.0.1908</span><br><span class="line"> * [would prune] origin/Branch_dev_bugfix_merchant_h5</span><br></pre></td></tr></table></figure>
+<p>可以看到，有两个远程分支已经失效，将会被清理，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote prune origin</span><br></pre></td></tr></table></figure>
+<p>这样，就完成了无效的远程追踪分支的清理工作。</p>
+<p><strong>需要注意，这里远程追踪分支批位于.git/refs/remote/origin 下的分支，如果有本地分支被check out的话，还需要手动清理</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -vv</span><br><span class="line">  Branch.v1.0.1908_unionpay           [origin/Branch.v1.0.1908_unionpay: gone]</span><br></pre></td></tr></table></figure>
+<p><strong>无效的远程追踪分支会以gone来标识</strong></p>
+<p>删除无效的本地分支命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d Branch.v1.0.1908_unionpay</span><br></pre></td></tr></table></figure>
+<h3><span id="添加tag">添加Tag</span></h3>
+<p>打印所有标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag</span><br></pre></td></tr></table></figure>
+<p>查看对应标签状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout &lt;版本号&gt;</span><br></pre></td></tr></table></figure>
+<p>附注标签是一个独立的标签对象，包含了名称时间戳以及标签备注等信息，同时指向对应的commit，定义方法如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -a &lt;版本号&gt; -m <span class="string">"&lt;备注信息&gt;"</span></span><br></pre></td></tr></table></figure>
+<p>删除本地标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -d &lt;版本号&gt;</span><br></pre></td></tr></table></figure>
+<p>同创建本地标签一样，删除了本地标签之后也要同时删除远程仓库的标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;版本号&gt;</span><br></pre></td></tr></table></figure>
+<p>推送本地标签到远程仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --tags</span><br></pre></td></tr></table></figure>
+<p>推送指定版本的标签</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin &lt;版本号&gt;</span><br></pre></td></tr></table></figure>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Git/">Git    </a></div><div class="post_share"><div class="social-share" data-image="/images/header_img/header-3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2018/09/05/front/cors/"><img class="prev_cover lozad" data-src="/images/header_img/header-10.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>跨域问题</span></div></a></div><div class="next-post pull-right"><a href="/2018/08/13/reprint/ajax-and-fetch/"><img class="next_cover lozad" data-src="/images/header_img/header-10.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>Ajxa已死，fetch永生</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span>Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/06/05/tools/git-stash/" title="git stash详解"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-7.jpg"><div class="relatedPosts_title">git stash详解</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By Liu Ning</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script></body></html>

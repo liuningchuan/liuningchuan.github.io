@@ -1,0 +1,157 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>HTML5新特性 | 上五楼的快活</title><meta name="description" content="HTML5令人兴奋的新特性"><meta name="keywords" content="JavaScript,Html"><meta name="author" content="Liu Ning,realliuning1995@gmail.com"><meta name="copyright" content="Liu Ning"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://lnlynn.github.io/2019/08/07/front/html5-new-feature/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="HTML5新特性"><meta name="twitter:description" content="HTML5令人兴奋的新特性"><meta name="twitter:image" content="http://lnlynn.github.io/images/header_img/header-10.jpg"><meta property="og:type" content="article"><meta property="og:title" content="HTML5新特性"><meta property="og:url" content="http://lnlynn.github.io/2019/08/07/front/html5-new-feature/"><meta property="og:site_name" content="上五楼的快活"><meta property="og:description" content="HTML5令人兴奋的新特性"><meta property="og:image" content="http://lnlynn.github.io/images/header_img/header-10.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="前端开发者不得不知的ES6十大特性" href="http://lnlynn.github.io/2019/09/01/front/es6-ten-new-feature/"><link rel="next" title="玩转IntelliJ IDEA" href="http://lnlynn.github.io/2019/08/04/tools/Intellij-idea-keymap/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight_copy: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><div id="content-outer"><div id="top-container" style="background-image: url(/images/header_img/header-10.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">上五楼的快活</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="/images/ironman-draw.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description"></div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-file-photo-o"></i><span> 相册</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-bars"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">HTML5新特性</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-07</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/前端/">前端</a></span></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p>2014年10月29日，W3C(万维网联盟)宣布，HTML5标准规范制定完成。作为一种超文本标记语言，HTML已经成为了Web上使用的通用标记语言，而在这次HTML5的规范中，为开发者带来了一些令人兴奋的新特性。</p>
+<p>下面简单地介绍下这些新特性，包括但不限于：</p>
+<ul>
+<li>语义化标签</li>
+<li>增强型表单</li>
+<li>DOM扩展</li>
+<li>原生拖放</li>
+<li>媒体元素</li>
+<li>Web Socket</li>
+<li>Web Storage</li>
+<li>地理位置</li>
+<li>canvas绘图</li>
+</ul>
+<h3><span id="语义化标签">语义化标签</span></h3>
+<p>HTML 语义化是指仅仅从 HTML 元素上就能看出页面的大致结构，比如需要强调的内容可以放在 <code>&lt;strong&gt;</code>标签中，而不是通过样式设置 <code>&lt;span&gt;</code>标签去做。不同浏览器对 HTML 元素的解析可能有差异，HTML 语义化便是在抛开样式之后，页面能有一个友好的展示效果。我们力求让页面有良好的结构，让页面的元素有含义，同时利于被搜索引擎解析，利于 SEO。HTML 语义化的建议：</p>
+<ul>
+<li>
+<p>少使用无意义的 <code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>标签；</p>
+</li>
+<li>
+<p>在 <code>&lt;label&gt;</code>标签中设置 for 属性和对应的 <code>&lt;input&gt;</code>关联起来；</p>
+</li>
+<li>
+<p>设置<code>&lt;img&gt;</code>标签的 alt 属性，给<code>&lt;a&gt;</code>标签设置 title 属性，利于 SEO；</p>
+</li>
+<li>
+<p>在页面的标题部分使用<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code> 标签，不需要给它们加多余的样式；</p>
+</li>
+<li>
+<p>与表单、有序列表、无序列表相关的标签不要单独使用。</p>
+</li>
+</ul>
+<p>HTML5 也新增了一些语义化的元素，我们通过标签名就能判断标签内容。</p>
+<p>语义元素的名称其实也很好理解，下面是它们的作用和用法：</p>
+<ul>
+<li>
+<p><code>&lt;header&gt;</code>标签通常放在页面或页面某个区域的顶部，用来设置页眉；</p>
+</li>
+<li>
+<p><code>&lt;nav&gt;</code>标签可以用来定义导航链接的集合，点击链接可以跳转到其他页面；</p>
+</li>
+<li>
+<p><code>&lt;article&gt;</code>标签中的内容比较独立，可以是一篇新闻报道，一篇博客，它可以独立于页面的其他内容进行阅读；</p>
+</li>
+<li>
+<p><code>&lt;section&gt;</code>标签表示页面中的一个区域，通常对页面进行分块或对内容进行分段，<code>&lt;section&gt;</code>标签和 <code>&lt;article&gt;</code>标签可以互相嵌套；</p>
+</li>
+<li>
+<p><code>&lt;aside&gt;</code>标签用来表示除页面主要内容之外的内容，比如侧边栏；</p>
+</li>
+<li>
+<p><code>&lt;footer&gt;</code>标签位于页面或页面某个区域的底部，用来设置页脚，通常包含版权信息，联系方式等。</p>
+</li>
+</ul>
+<h3><span id="增强型表单">增强型表单</span></h3>
+<p>在HTML5前的表单标签中，对于一些功能支持的不够好，比如：文本框提示信息、表单校验、日期选择控件、颜色选择控件、范围控件、进度条、标签跨表单等功能，HTML5中这些常用的基本功能直接加到了新的表单标签中。</p>
+<p>新的表单中添加了很多输入型控件，比如：<strong>number</strong>、<strong>url</strong>、<strong>email</strong>、<strong>range</strong>、<strong>color</strong>、<strong>date</strong>等，通过input的type属性使用。例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"demo"</span> <span class="attr">min</span>=<span class="string">"1"</span> <span class="attr">max</span>=<span class="string">"100"</span> <span class="attr">step</span>=<span class="string">"2"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>同时，还添加了<strong>placeholder</strong>、<strong>required</strong>、<strong>pattern</strong>、<strong>min</strong>、<strong>max</strong>、<strong>height</strong>、<strong>width</strong>等表单属性。</p>
+<ul>
+<li>placeholder 提供对输入域的提示值</li>
+<li>required 规定表单提交前输入域是否必填</li>
+<li>pattern 规定用于验证input域的正则表达式</li>
+<li>min 规定输入域允许的最小值</li>
+<li>max 规定输入域允许的最大值</li>
+<li>multiple 输入域可以选择多个值，适用于email和file类型</li>
+</ul>
+<p>HTML5标准的表单中添加了很多功能，虽然这些功能都是之前常用的功能，但对于开发者来说，这确实是一件很不错的事情。</p>
+<h3><span id="dom扩展">DOM扩展</span></h3>
+<p>HTML5增加的<code>getElementByClassName()</code>方法是最受人欢迎的一个方法，可以通过document对象及所有HTML元素调用该方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得类中包含"username"和"current"的元素</span></span><br><span class="line"><span class="keyword">var</span> allCurrentUsernames = <span class="built_in">document</span>.getElementByClassName(<span class="string">"username current"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//取得id为"myDiv"的元素中带有类名"selected"的所有元素</span></span><br><span class="line"><span class="keyword">var</span> selected = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).getElementsByClassName(<span class="string">"selected"</span>)</span><br></pre></td></tr></table></figure>
+<p>使用这个方法可以更方便地为带有某些类的元素添加事件处理程序，而不必再局限于使用ID或标签名(<strong>getElementsByTagName</strong>)。</p>
+<p>HTML5规定可以为元素添加非标准的属性，但要加前缀<strong>data-</strong>，为元素提供与渲染无关的信息。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div"</span> <span class="attr">data-age</span>=<span class="string">"2019"</span> <span class="attr">data-name</span>=<span class="string">"James"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以通过元素的<strong>dataset</strong>属性访问自定义属性的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"div"</span>)</span><br><span class="line"><span class="comment">//取得自定义属性的值</span></span><br><span class="line"><span class="keyword">var</span> age = div.dataset.age;</span><br><span class="line"><span class="keyword">var</span> name = div.dataset.name;</span><br></pre></td></tr></table></figure>
+<p>HTML5还为DOM作了其他扩展，包括classList属性、焦点管理、HTMLDocument变化、字符集属性、插入标记等。</p>
+<h3><span id="原生拖放">原生拖放</span></h3>
+<p>最早在网页中引入JavaScript拖放功能的是IE4，HTML5以IE的实例为基础制定了拖放规范。拖放事件可以控制拖放相关的各个方面，拖动某元素时，将依次触发下列事件：</p>
+<ul>
+<li>dragstart</li>
+<li>drag</li>
+<li>dragend</li>
+</ul>
+<p>拖放通常伴随着数据变化，为了在拖放操作时实现数据变换，IE5引入了<strong>dataTransfer</strong>对象，它是事件对象的一个属性，用于从被拖动元素向放置目标传递字符串格式的数据。dataTransfer对象有两个主要方法：<strong>getData()<strong>和</strong>setData()</strong>，getData()可以获取由setData()保存的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置和接收文本数据</span></span><br><span class="line">event.dataTransfer.serData(<span class="string">"name"</span>, <span class="string">"James"</span>)</span><br><span class="line"><span class="keyword">var</span> name = event.dataTransfer.getData(<span class="string">"name"</span>)</span><br></pre></td></tr></table></figure>
+<p>同时，还能通过dataTransfer来确定被拖动的元素及作为放置目标的元素能够接收什么操作。</p>
+<p>默认情况下，图像、链接和文本是可以拖动的，HTML5为所有HTML元素规定了一个<strong>draggable</strong>属性，表示元素是否可以拖动。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"smile.gif"</span> <span class="attr">draggable</span>=<span class="string">"false"</span> <span class="attr">alt</span>=<span class="string">"smile"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span>James<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="媒体元素">媒体元素</span></h3>
+<p>HTML5新增了两个与媒体相关的标签，让开发人员不必依赖任何插件就能在网页中嵌入跨浏览器的音频和视频内容，这两个标签就是<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 视频 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">id</span>=<span class="string">"myVideo"</span>&gt;</span>Video Player<span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 音频 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"song.mp3"</span> <span class="attr">id</span>=<span class="string">"myAudio"</span>&gt;</span>Audio Player<span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用这两个元素时，至少要在标签中包含src属性，指向要加载的媒体文件。并非所有的浏览器都支持所有媒体格式，所以可以指定多个不同的媒体来源，此时使用<code>&lt;source&gt;</code>元素而不用指定src属性。</p>
+<p><code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>包含很多属性，包括<strong>autuplay</strong>、<strong>controls</strong>、<strong>src</strong>等，还可以触发很多事件，让开发人员在使用少量HTML和JavaScript的情况下编写出自定义的音频/视频播放器。</p>
+<h3><span id="web-storage">Web Storage</span></h3>
+<p>Web Storage的目的是克服由cookie带来的一些限制，当数据需要被严格控制在客户端上时，无须持续地将数据发回服务器。Web Storage的两个主要目标是：</p>
+<ul>
+<li>提供一种在cookie之外存储会话数据的途径</li>
+<li>提供一种存储大量可以跨会话存在的数据的机制</li>
+</ul>
+<p>Web Storage常用的两个对象分别是localStorage和sessionStorage。</p>
+<p><strong>sessionStorage</strong>对象存储某个特定会话的数据，该数据只保持到浏览器关闭。因为sessionStorage绑定于某个服务器会话，所以文件在本地运行时是不可用的。下面展示了怎么使用sessionStorage:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.setItem(<span class="string">"name"</span>, <span class="string">"James"</span>);</span><br><span class="line"><span class="keyword">var</span> name = sessionStorage.getItem(<span class="string">"name"</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>localStorage</strong>对象在HTML5规范中作为持久保存客户端数据的方案，目的是跨越会话存储对象，但有特定的访问限制。要访问同一个localStorage对象，页面必须来自同一个域名(子域名无效)，使用同一种协议，在同一个端口上。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(<span class="string">"name"</span>, <span class="string">"James"</span>);</span><br><span class="line"><span class="keyword">var</span> name = localStorage.getItem(<span class="string">"name"</span>)</span><br></pre></td></tr></table></figure>
+<p>与其他客户端数据存储方案类似，Web Storage同样也有限制，这些限制因浏览器而异。对于localStorage和sessionStorage，有的浏览器会设置每个来源5MB的限制，有的浏览器会设置2.5M的限制。</p>
+<h3><span id="web-sockets">Web Sockets</span></h3>
+<p>Web Sockets的目标是在一个单独的持久连接上提供全双工、双向通信。使用标准的HTTP服务器无法实现Web Sockets，只有支持这种协议的专门服务器才能正常工作。</p>
+<p>未加密的连接不再是http://而是<strong>ws://</strong>，加密的连接也不再是https://而是<strong>wss://</strong>。使用自定义协议而不是HTTP协议的好处是，能够在客户端和服务器之间发送非常少量的数据，而不必担心HTTP那样字节级的开销。</p>
+<p>要创建Web Socket，先实现一个WebSocket对象并传入要连接的URL:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">"ws://www.example.com/"</span>)</span><br></pre></td></tr></table></figure>
+<p>Web Socket打开之后，就可以通过连接发送和接收数据。要向服务器发送数据，使用send()方法并传入任意字符串，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socket.send(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure>
+<p>对于复杂的数据结构，在通过连接发送前，必须进行序列化:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将数据序列化为一个JSON字符串，再发送到服务器</span></span><br><span class="line"><span class="keyword">const</span> message = &#123;</span><br><span class="line">  name: <span class="string">"James"</span>,</span><br><span class="line">  age: <span class="string">"2019"</span>,</span><br><span class="line">  date: <span class="string">"2019-01-01"</span></span><br><span class="line">&#125;</span><br><span class="line">socket.send(<span class="built_in">JSON</span>.stringify(message));</span><br></pre></td></tr></table></figure>
+<p>接下来，服务器要读取其中的数据，就要解析接收的JSON字符串。当服务器向客户端发来消息时，WebSocket对象就会触发message事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">socket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">const</span> data = event.data;</span><br><span class="line"> </span><br><span class="line"> <span class="comment">//处理数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>要关闭Web Socket连接，可以在任何时候调用close()方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socket.close();</span><br></pre></td></tr></table></figure>
+<h3><span id="地理位置">地理位置</span></h3>
+<p>通过地理定位(geolocation)API，JavaScript代码能够访问到用户的当前位置信息。当然，访问之前用户必须同意共享其地理位置信息。</p>
+<p>Geolocation API在浏览器中的实现是<strong>navigator.geolocation</strong>对象，这个对象包含3个方法。第一个方法是<strong>getCurrentPosition()</strong>，调用这个方法就会触发请求用户共享地理定位信息的对话框。成功会接收到一个Position对象参数，该对象有两个属性：<strong>coords</strong>和<strong>timestamp</strong>。coords对象中将包含下列与位置相关的信息：</p>
+<ul>
+<li>latitude：纬度</li>
+<li>longitude：经度</li>
+<li>accuracy：经、纬度坐标的精度，以米为单位</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(<span class="function"><span class="params">position</span> =&gt;</span> &#123;</span><br><span class="line">  drawMapAt(position.coords.latitude, position.coords.longitude);</span><br><span class="line">&#125;, error =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Error Code:"</span> + error.code);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Error Message:"</span> + error.message);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果希望跟踪用户的位置，可以使用<strong>watchPosition</strong>()方法。这个方法与getCurrentPosition()方法基本相同，第一次调用，执行成功回调或者错误回调，然后，watchPosition()就地等待系统发出位置已改变的信号（它不会自己轮询位置）。</p>
+<h3><span id="canvas绘图">Canvas绘图</span></h3>
+<p>HTML5添加的最受欢迎的功能就是<code>&lt;canvas&gt;</code>元素。这个元素负责在页面中设定一个区域，然后就可以通过JavaScript动态地在这个区域中绘制图形。</p>
+<p><code>&lt;canvas&gt;</code>元素最早是苹果公司推出的，当时主要用在其Dsahboard文件中（最新的Mac已经弃用了这个软件）。</p>
+<p>要使用<code>&lt;canvas&gt;</code>元素，必须先设置其width和height属性，指定可以绘图的区域大小。出现在开始标签和结束标签中的内容是后备信息，如果浏览器不支持<code>&lt;canvas&gt;</code>元素，就会显示这些信息。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"drawing"</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span>A drawing of something.<span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="结语">结语</span></h3>
+<p>上面只是简单地介绍了下HTML5所带来的一些新特性，浅尝则止并不深入，这些新特性在平时的开发中也给我们带来了很大的便利性。</p>
+<p>如果想深入地了解这些特性，建议去<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML" target="_blank" rel="noopener">Mozilla</a>官方网站阅读相关文档。</p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript    </a><a class="post-meta__tags" href="/tags/Html/">Html    </a></div><div class="post_share"><div class="social-share" data-image="/images/header_img/header-10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2019/09/01/front/es6-ten-new-feature/"><img class="prev_cover lozad" data-src="/images/header_img/header-1.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>前端开发者不得不知的ES6十大特性</span></div></a></div><div class="next-post pull-right"><a href="/2019/08/04/tools/Intellij-idea-keymap/"><img class="next_cover lozad" data-src="/images/header_img/header-9.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>玩转IntelliJ IDEA</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span>Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/09/01/front/es6-ten-new-feature/" title="前端开发者不得不知的ES6十大特性"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-1.jpg"><div class="relatedPosts_title">前端开发者不得不知的ES6十大特性</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By Liu Ning</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script></body></html>

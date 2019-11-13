@@ -1,0 +1,111 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Debian系统配置使用心得 | 上五楼的快活</title><meta name="description" content="Debian系统配置使用心得"><meta name="keywords" content="Linux"><meta name="author" content="Liu Ning,realliuning1995@gmail.com"><meta name="copyright" content="Liu Ning"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://lnlynn.github.io/2018/08/12/linux/debian-system-config/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Debian系统配置使用心得"><meta name="twitter:description" content="Debian系统配置使用心得"><meta name="twitter:image" content="http://lnlynn.github.io/images/header_img/header-7.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Debian系统配置使用心得"><meta property="og:url" content="http://lnlynn.github.io/2018/08/12/linux/debian-system-config/"><meta property="og:site_name" content="上五楼的快活"><meta property="og:description" content="Debian系统配置使用心得"><meta property="og:image" content="http://lnlynn.github.io/images/header_img/header-7.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="Ajxa已死，fetch永生" href="http://lnlynn.github.io/2018/08/13/reprint/ajax-and-fetch/"><link rel="next" title="Ubuntu安装MySql" href="http://lnlynn.github.io/2018/07/29/linux/ubuntu-install-mysql/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight_copy: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><div id="content-outer"><div id="top-container" style="background-image: url(/images/header_img/header-7.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">上五楼的快活</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="/images/ironman-draw.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description"></div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-file-photo-o"></i><span> 相册</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-bars"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Debian系统配置使用心得</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-08-12</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Linux/">Linux</a></span></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p>经过自己作死般不停地瞎折腾，抛弃了Ubuntu又给电脑装上了Debian。</p>
+<p>这么些天折腾下来，什么技术没学到，Linux发行版倒是体验了好几种，我想Debian应该是最终的选择了吧，呵呵。</p>
+<p>选择Debian的原因也很简单，Ubuntu更多是一个桌面发行版，做了很多桌面优化使得它的界面看上去很漂亮（<strong>重点是我觉得很丑</strong>），对系统的资源占用率相对较Debian要高些。我的电脑又是刚上大学时买的一台很垃圾的华硕笔记本，到现在用着已经很吃力了。</p>
+<p>经过比较，安装后Ubuntu后内存占用1.4G左右，而安装Debian后内存占用1G左右，这小小的差距让我心里平衡了一些。Debian的界面看上去清爽了很多，Ubuntu看上去就跟个紫薯精一样，我是真的无法理解Ubuntu的界面漂亮在哪里。</p>
+<p>使用Debian后就会发现Ubuntu是多么省事，要想日常用上Debian还得克服重重阻碍。</p>
+<h4><span id="1系统窗口最大化最小化">1.系统窗口最大化最小化</span></h4>
+<p>安装好Debian新系统后，第一件事就是打开系统自带的火狐浏览器，发现居然只有关闭按钮而没有最大化最小化按钮，这真的是让我很蛋疼了。</p>
+<p>解决方法很简单，在终端输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-tweak-tool</span><br></pre></td></tr></table></figure>
+<p>打开设置窗口：</p>
+<ul>
+<li>在桌面栏开启桌面图标</li>
+<li>在窗口栏开启最大化和最小化按钮显示</li>
+</ul>
+<p>因为没有开启桌面图标，打开终端都得在应用程序里面找，而且没有安装中文支持，所有的界面都是英文的。</p>
+<h4><span id="2添加终端快捷键">2.添加终端快捷键</span></h4>
+<p>Debian默认是没有终端的快捷键的需要自己定义，设置的方法也很简单，打开设置-&gt;键盘，滑到底部用户自定义快捷键。</p>
+<ul>
+<li>名称：Terminal</li>
+<li>命令：gnome-terminal</li>
+<li>快捷键：Ctrl + Alt + T</li>
+</ul>
+<p>这样终端的快捷键就设置成功。</p>
+<h4><span id="3修改软件源设置">3.修改软件源设置</span></h4>
+<p>用apt-get安装软件包时提示让我插入netinst的光盘，莫名奇妙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Media change:please insert the disc labeled</span><br></pre></td></tr></table></figure>
+<p>这时需要打开<code>/etc/apt/sources.list</code>文件，注释掉cdrom那一行，再执行<code>apt-get update</code>更新下deb仓库，再使用apt-get安装时就不会搜寻cdrom了。</p>
+<p>接着安装vim</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install vim</span><br><span class="line"></span><br><span class="line">E:Package &apos;vim-gtk&apos; has no installation candidate</span><br></pre></td></tr></table></figure>
+<p>真的是坑爹，解决方法就是修改软件源设置</p>
+<ul>
+<li>备份源文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -i /etc/apt/sources.list /etc/apt/sources.list_backup</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打开sources.list</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在源文件中加入如下阿里巴巴的阿里云服务器的地址并保存</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<p>这样问题就解决了，安装vim也不会再报错了。</p>
+<h4><span id="4安装sudo并添加sudoers">4.安装sudo并添加sudoers</span></h4>
+<p>前面的这些操作都是在root用户下操作的，和Ubuntu不同，Debian在安装过程中会让你选择添加root用户和普通用户，这也是我推荐的一种做法。</p>
+<p>但是普通用户需要执行一些root命令时总不能每次都<code>su root</code>切换到root用户吧？于是需要安装一下sudo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install sudo</span><br></pre></td></tr></table></figure>
+<p>sudo能够完成很多root用户能完成的工作，它们之间也有一定的区别，执行sudo时需要的是普通用户的密码。</p>
+<p>安装完sudo执行命令后还是会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx is not in the sudoers file.This incident will be reported.</span><br></pre></td></tr></table></figure>
+<p>显然，需要在sudoers文件中添加当前用户</p>
+<ul>
+<li>切换到root，添加sudo文件的写权限</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+w /etc/sudoers</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编辑sudoers文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></figure>
+<p>找到root ALL=(ALL) ALL,在下面添加xxx ALL=(ALL) ALL (xxx即普通用户名)</p>
+<ul>
+<li>撤销sudoers文件写权限</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u-w /etc/sudoers</span><br></pre></td></tr></table></figure>
+<p>这样普通用户就可以使用sudo命令了。</p>
+<h4><span id="5安装chrome浏览器">5.安装Chrome浏览器</span></h4>
+<p>虽然Debian自带了Firefox浏览器，但Firefox显然无法和Chrome浏览器相抗衡，亲测，在Debian和Ubuntu下，Firefox的打开速度都没有Chrome快，而且Firefox顶部有一个特别难看占面积的边框，果然放弃。</p>
+<p>首先，打开终端并运行以下命令下载chrome deb包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure>
+<p>然后，安装依赖关系</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libappindicator1 libdbusmenu-glib4 libdbusmenu-gtk4 libindicator7 libpango1.0-0 libpangox-1.0-0</span><br></pre></td></tr></table></figure>
+<p>最后，使用<code>dpkg</code>安装chrome deb包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br></pre></td></tr></table></figure>
+<p>安装过程中如果报错，可以使用一下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get -f install</span><br></pre></td></tr></table></figure>
+<p>如果是缺包的话就安装呢相应的依赖包。</p>
+<h4><span id="6安装中文支持及搜狗输入法">6.安装中文支持及搜狗输入法</span></h4>
+<p>要支持区域设置，首先要安装locales软件包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install locales</span><br></pre></td></tr></table></figure>
+<p>然后配置locales软件包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
+<p>在界面中选择<code>zh_CN.UTF-8</code>即可。</p>
+<p>接下来就是中文输入法了，这里选择搜狗输入法，在官网下载deb包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fcitx</span><br><span class="line">sudo dpkg -i sougoupinyin_2.2.0.0108_amd64.deb</span><br></pre></td></tr></table></figure>
+<p>中间报错可以执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -f</span><br><span class="line">sudo apt-get install update</span><br></pre></td></tr></table></figure>
+<p>安装过程中会出现各种各样的坑爹问题，一般来说都是可以解决的。</p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux    </a></div><div class="post_share"><div class="social-share" data-image="/images/header_img/header-7.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2018/08/13/reprint/ajax-and-fetch/"><img class="prev_cover lozad" data-src="/images/header_img/header-10.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>Ajxa已死，fetch永生</span></div></a></div><div class="next-post pull-right"><a href="/2018/07/29/linux/ubuntu-install-mysql/"><img class="next_cover lozad" data-src="/images/header_img/header-4.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>Ubuntu安装MySql</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span>Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2018/07/22/linux/linux-change-file-permission/" title="Linux修改文件权限"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-6.jpg"><div class="relatedPosts_title">Linux修改文件权限</div></a></div><div class="relatedPosts_item"><a href="/2018/07/19/linux/linux-file-catelog/" title="Linux软件安装目录"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-5.jpg"><div class="relatedPosts_title">Linux软件安装目录</div></a></div><div class="relatedPosts_item"><a href="/2018/07/19/linux/ubuntu-zip-chinese-error-code/" title="Ubutnu解决zip中文乱码问题"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-3.jpg"><div class="relatedPosts_title">Ubutnu解决zip中文乱码问题</div></a></div><div class="relatedPosts_item"><a href="/2018/07/29/linux/ubuntu-install-mysql/" title="Ubuntu安装MySql"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-4.jpg"><div class="relatedPosts_title">Ubuntu安装MySql</div></a></div><div class="relatedPosts_item"><a href="/2019/06/02/linux/tomcat-deploy-command/" title="Tomcat部署常用命令"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-6.jpg"><div class="relatedPosts_title">Tomcat部署常用命令</div></a></div><div class="relatedPosts_item"><a href="/2018/07/15/linux/ubuntu18.04-install-jdk/" title="Ubuntu18.04安装jdk"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-2.jpg"><div class="relatedPosts_title">Ubuntu18.04安装jdk</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By Liu Ning</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script></body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Java中的注解是怎样工作的? | 上五楼的快活</title><meta name="description" content="Java中的注解是怎样工作的?"><meta name="keywords" content="Java"><meta name="author" content="Liu Ning,realliuning1995@gmail.com"><meta name="copyright" content="Liu Ning"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://lnlynn.github.io/2019/06/13/java/how-java-annotations-works/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Java中的注解是怎样工作的?"><meta name="twitter:description" content="Java中的注解是怎样工作的?"><meta name="twitter:image" content="http://lnlynn.github.io/images/header_img/header-8.jpg"><meta property="og:type" content="article"><meta property="og:title" content="Java中的注解是怎样工作的?"><meta property="og:url" content="http://lnlynn.github.io/2019/06/13/java/how-java-annotations-works/"><meta property="og:site_name" content="上五楼的快活"><meta property="og:description" content="Java中的注解是怎样工作的?"><meta property="og:image" content="http://lnlynn.github.io/images/header_img/header-8.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="玩转IntelliJ IDEA" href="http://lnlynn.github.io/2019/08/04/tools/Intellij-idea-keymap/"><link rel="next" title="git stash详解" href="http://lnlynn.github.io/2019/06/05/tools/git-stash/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight_copy: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><div id="content-outer"><div id="top-container" style="background-image: url(/images/header_img/header-8.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">上五楼的快活</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="/images/ironman-draw.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description"></div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-file-photo-o"></i><span> 相册</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-bars"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Java中的注解是怎样工作的?</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-06-13</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Java/">Java</a></span></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h3><span id="什么是注解">什么是注解</span></h3>
+<p>用一个词就可以描述注解，那就是元数据，即一种描述数据的数据。所以，可以说注解就是源代码的元数据。比如，下面这段代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">"This is String Representation of current object."</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，重写了toString()方法并使用了@Override注解。</p>
+<p>事实上，@Override告诉编译器这个方法是一个重写方法(描述方法的元数据)，如果父类中不存在该方法，编译器便会报错，提示该方法没有重写父类中的方法。如果不小心拼写错误，例如将toString()写成了toStrring(){double r}，而且也没有使用@Override注解，那程序依然能编译运行，但运行结果会和期望的大不相同。</p>
+<p>Annotation是一种应用于类、方法、参数、变量、构造器及包声明中的特殊修饰符。它是一种由JSR-175标准选择用来描述元数据的一种工具。使用注解有助于阅读程序。</p>
+<h3><span id="为什么要引入注解">为什么要引入注解</span></h3>
+<p>使用Annotation之前(甚至在使用之后)，XML被广泛的应用于描述元数据。不知何时开始一些应用开发人员和架构师发现XML的维护越来越糟糕了。他们希望使用一些和代码紧耦合的东西，而不是像XML那样和代码是松耦合的(在某些情况下甚至是完全分离的)代码描述。如果你在Google中搜索“XML vs. annotations”，会看到许多关于这个问题的辩论。最有趣的是XML配置其实就是为了分离代码和配置而引入的。上述两种观点可能会让你很疑惑，两者观点似乎构成了一种循环，但各有利弊。下面我们通过一个例子来理解这两者的区别。</p>
+<p>假如你想为应用设置很多的常量或参数，这种情况下，XML是一个很好的选择，因为它不会同特定的代码相连。如果你想把某个方法声明为服务，那么使用Annotation会更好一些，因为这种情况下需要注解和方法紧密耦合起来，开发人员也必须认识到这点。</p>
+<p>另一个很重要的因素是Annotation定义了一种标准的描述元数据的方式。在这之前，开发人员通常使用他们自己的方式定义元数据。例如，使用标记interfaces，注释，transient关键字等等。每个程序员按照自己的方式定义元数据，而不像Annotation这种标准的方式。</p>
+<h3><span id="注解是如何工作的">注解是如何工作的</span></h3>
+<p>当注解标注到某个类或者方法或者某个成员变量或者某个输入参数上的时候，一定有一个对应的机制来对注解标注的类、方法、成员变量和参数进行某些处理。</p>
+<p>编写Annotation非常简单，注解本身也可以说是一个类。可以将Annotation的定义同接口的定义进行比较。看个例子，标准的注解@Override：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.lang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Override &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看见，@Override注解似乎什么都没做，那它是如何检查在父类中有一个同名的函数？@Override注解的定义仅仅是元数据，不包含业务逻辑，而实现业务逻辑的就是注解的用户。</p>
+<p>对于@Override注解，它的用户就是JVM虚拟机，工作在字节码层面，在编译阶段进行检查，其处理机制主要是JVM内部处理。</p>
+<p>再例如Spring中的 <strong>@Service</strong> 注解，Spring在启动IOC容器的时候会对每个类进行扫描，把所有标注@Component及其子注解如@Service的类进行Bean处理。</p>
+<h3><span id="编写自定义的注解">编写自定义的注解</span></h3>
+<p>JDK5.0版本在 java.lang.annotation提供了四种元注解，专门注解其他的注解：</p>
+<ul>
+<li>
+<p>@Documented – 是否将注解信息添加在java文档中</p>
+</li>
+<li>
+<p>@Retention – 定义该注解的生命周期</p>
+</li>
+<li>
+<p>@Target –注解用于什么地方</p>
+</li>
+<li>
+<p>@Inherited – 是否允许子类继承该注解</p>
+</li>
+</ul>
+<p><strong>@Retention</strong> 注解定义该注解的生命周期，在什么阶段丢弃，</p>
+<ul>
+<li>
+<p>RetentionPolicy.SOURCE – 在编译阶段丢弃。这些注解在编译结束之后就不再有任何意义，所以它们不会写入字节码。@Override, @SuppressWarnings都属于这类注解。</p>
+</li>
+<li>
+<p>RetentionPolicy.CLASS – 在类加载的时候丢弃，在字节码文件的处理中有用。注解默认使用这种方式。</p>
+</li>
+<li>
+<p>RetentionPolicy.RUNTIME – 始终不会丢弃，运行期也保留该注解，因此可以使用反射机制读取该注解的信息。自定义的注解通常使用这种方式。</p>
+</li>
+</ul>
+<p><strong>@Target</strong> – 表示该注解用于什么地方。如果不明确指出，该注解可以放在任何地方。属性的注解是兼容的。</p>
+<ul>
+<li>
+<p>ElementType.TYPE:用于描述类、接口或enum声明</p>
+</li>
+<li>
+<p>ElementType.FIELD:用于描述实例变量</p>
+</li>
+<li>
+<p>ElementType.METHOD</p>
+</li>
+<li>
+<p>ElementType.PARAMETER</p>
+</li>
+<li>
+<p>ElementType.CONSTRUCTOR</p>
+</li>
+<li>
+<p>ElementType.LOCAL_VARIABLE</p>
+</li>
+<li>
+<p>ElementType.ANNOTATION_TYPE 另一个注释</p>
+</li>
+<li>
+<p>ElementType.PACKAGE 用于记录java文件的package信息</p>
+</li>
+</ul>
+<p>那么，注解的内部到底是如何定义的呢？Annotations只支持基本类型、String及枚举类型。注释中所有的属性被定义成方法，并允许提供默认值。</p>
+<p>定义一个 <strong>@AuthCheck</strong> 注解，作用在SpringMVC controller的方法上。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.liuning.sys.auth;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.annotation.ElementType.METHOD;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Documented;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Target</span>(METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> AuthCheck &#123;</span><br><span class="line">	<span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注解中只有一个属性，可以直接命名为“value”，使用时无需再标明属性名。</p>
+<p>在Spring的拦截器<strong>HandlerInterceptor</strong>中实现@AuthCheck注解的业务逻辑，这里使用了反射机制。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, </span></span></span><br><span class="line"><span class="function"><span class="params">                         HttpServletResponse response, </span></span></span><br><span class="line"><span class="function"><span class="params">                         Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	HandlerMethod hm = (HandlerMethod) handler;</span><br><span class="line">	AuthCheck ac = hm.getMethodAnnotation(AuthCheck<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">	<span class="keyword">if</span> (ac != <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (ac.value() == <span class="string">"Login"</span>) &#123;</span><br><span class="line">			<span class="comment">//进行业务逻辑操作</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面的例子演示了如何使用上面的注解。使用了该注解的方法在用户调用的时候会需要用户已登录。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/list"</span>)</span><br><span class="line"><span class="meta">@AuthCheck</span>(value = <span class="string">"Login"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">getUserList</span><span class="params">(@RequestBody @Valid User user)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> userService.getUserList(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java    </a></div><div class="post_share"><div class="social-share" data-image="/images/header_img/header-8.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2019/08/04/tools/Intellij-idea-keymap/"><img class="prev_cover lozad" data-src="/images/header_img/header-9.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>玩转IntelliJ IDEA</span></div></a></div><div class="next-post pull-right"><a href="/2019/06/05/tools/git-stash/"><img class="next_cover lozad" data-src="/images/header_img/header-7.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>git stash详解</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span>Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/04/02/java/difference-between-interceptor-and-filter/" title="Interceptor和Filter的区别"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-5.jpg"><div class="relatedPosts_title">Interceptor和Filter的区别</div></a></div><div class="relatedPosts_item"><a href="/2018/03/18/java/summary-of-java/" title="Java知识总结"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-8.jpg"><div class="relatedPosts_title">Java知识总结</div></a></div><div class="relatedPosts_item"><a href="/2019/06/02/linux/tomcat-deploy-command/" title="Tomcat部署常用命令"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-6.jpg"><div class="relatedPosts_title">Tomcat部署常用命令</div></a></div><div class="relatedPosts_item"><a href="/2019/08/04/tools/Intellij-idea-keymap/" title="玩转IntelliJ IDEA"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-9.jpg"><div class="relatedPosts_title">玩转IntelliJ IDEA</div></a></div><div class="relatedPosts_item"><a href="/2019/03/23/tools/swagger/" title="API文档工具Swagger介绍及使用"><img class="relatedPosts_cover lozad" data-src="/images/header_img/header-4.jpg"><div class="relatedPosts_title">API文档工具Swagger介绍及使用</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2019 By Liu Ning</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script></body></html>
