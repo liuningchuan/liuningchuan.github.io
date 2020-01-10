@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://lnlynn.github.io/2019/12/29/java/java-threadpoolexecutor-introduce/</loc>
-        <lastmod>2019-12-29T14:17:45.873Z</lastmod>
+        <lastmod>2020-01-06T15:37:10.809Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://lnlynn.github.io/2018/08/18/tools/git/</loc>
+        <lastmod>2020-01-04T15:58:17.438Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,14 +32,6 @@
 
     <url>
         <loc>http://lnlynn.github.io/2019/06/05/tools/git-stash/</loc>
-        <lastmod>2019-11-13T15:18:50.153Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://lnlynn.github.io/2018/08/18/tools/git/</loc>
         <lastmod>2019-11-13T15:18:50.153Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -71,14 +71,6 @@
     </url>
 
     <url>
-        <loc>http://lnlynn.github.io/2018/07/29/linux/ubuntu-install-mysql/</loc>
-        <lastmod>2019-11-13T15:18:50.151Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://lnlynn.github.io/2018/07/19/linux/linux-file-catelog/</loc>
         <lastmod>2019-11-13T15:18:50.151Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -87,7 +79,7 @@
     </url>
 
     <url>
-        <loc>http://lnlynn.github.io/2018/07/19/linux/ubuntu-zip-chinese-error-code/</loc>
+        <loc>http://lnlynn.github.io/2019/06/02/linux/tomcat-deploy-command/</loc>
         <lastmod>2019-11-13T15:18:50.151Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -95,7 +87,15 @@
     </url>
 
     <url>
-        <loc>http://lnlynn.github.io/2019/06/02/linux/tomcat-deploy-command/</loc>
+        <loc>http://lnlynn.github.io/2018/07/29/linux/ubuntu-install-mysql/</loc>
+        <lastmod>2019-11-13T15:18:50.151Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://lnlynn.github.io/2018/07/19/linux/ubuntu-zip-chinese-error-code/</loc>
         <lastmod>2019-11-13T15:18:50.151Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -127,7 +127,7 @@
     </url>
 
     <url>
-        <loc>http://lnlynn.github.io/2018/03/18/java/summary-of-java/</loc>
+        <loc>http://lnlynn.github.io/2019/06/13/java/how-java-annotations-works/</loc>
         <lastmod>2019-11-13T15:18:50.150Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -135,7 +135,7 @@
     </url>
 
     <url>
-        <loc>http://lnlynn.github.io/2019/06/13/java/how-java-annotations-works/</loc>
+        <loc>http://lnlynn.github.io/2018/03/18/java/summary-of-java/</loc>
         <lastmod>2019-11-13T15:18:50.150Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -159,7 +159,7 @@
     </url>
 
     <url>
-        <loc>http://lnlynn.github.io/2018/09/18/front/install-nodejs/</loc>
+        <loc>http://lnlynn.github.io/2018/11/18/front/react-download-and-upload-file/</loc>
         <lastmod>2019-11-13T15:18:50.149Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -167,7 +167,7 @@
     </url>
 
     <url>
-        <loc>http://lnlynn.github.io/2018/11/18/front/react-download-and-upload-file/</loc>
+        <loc>http://lnlynn.github.io/2018/09/18/front/install-nodejs/</loc>
         <lastmod>2019-11-13T15:18:50.149Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
